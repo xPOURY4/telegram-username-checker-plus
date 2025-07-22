@@ -1,0 +1,23 @@
+# Proxy List for Telegram Username Checker Plus
+# Format: proxy_type:address:port:username:password
+# Leave username and password empty if not required
+
+# SOCKS5 Proxies
+socks5:127.0.0.1:1080::
+socks5:proxy1.example.com:1080:user1:pass1
+socks5:proxy2.example.com:1080::
+
+# SOCKS4 Proxies
+socks4:127.0.0.1:1081::
+socks4:proxy3.example.com:1081::
+
+# HTTP Proxies
+http:127.0.0.1:8080::
+http:proxy4.example.com:8080:user2:pass2
+http:proxy5.example.com:3128::
+
+# Instructions:
+# 1. Replace example addresses with real proxy servers
+# 2. Add your proxy credentials if required
+# 3. Remove or comment out (#) unused proxies
+# 4. The application will use the first working proxy from this list

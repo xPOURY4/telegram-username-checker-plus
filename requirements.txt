@@ -1,0 +1,4 @@
+telethon>=1.35.0
+asyncio
+colorama
+PySocks
