@@ -1,4 +1,60 @@
+# Telegram Username Checker Plus v2.3 Dependencies
+
+# Core Telegram API
 telethon>=1.35.0
+
+# Async and Threading
 asyncio
-colorama
-PySocks
+threading
+
+# Console and UI
+colorama>=0.4.6
+
+# Proxy Support
+PySocks>=1.7.1
+
+# HTTP and Web Server (for API)
+flask>=2.3.0
+requests>=2.31.0
+
+# Data Processing
+json
+base64
+hashlib
+
+# System and Platform
+platform
+os
+sys
+subprocess
+
+# Configuration and Files
+configparser
+csv
+
+# Date and Time
+datetime
+time
+
+# Encryption and Security
+cryptography>=41.0.0
+
+# Performance and Monitoring
+psutil>=5.9.0
+
+# Plugin System
+importlib
+inspect
+
+# Cloud Integration (optional)
+boto3>=1.28.0  # For AWS S3
+google-cloud-storage>=2.10.0  # For Google Cloud
+azure-storage-blob>=12.17.0  # For Azure
+
+# Additional Utilities
+typing
+re
+random
+math
+logging
+argparse
