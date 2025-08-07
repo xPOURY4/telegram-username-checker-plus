@@ -1,0 +1,98 @@
+{
+  "version": "2.3.0",
+  "last_updated": "2025-08-07T00:00:00Z",
+  "cloud_settings": {
+    "enabled": false,
+    "provider": "local",
+    "sync_accounts": false,
+    "sync_settings": false,
+    "sync_statistics": false,
+    "auto_backup": true,
+    "backup_interval": 3600,
+    "max_backups": 10,
+    "compression_enabled": true,
+    "encryption_enabled": true
+  },
+  "providers": {
+    "aws_s3": {
+      "enabled": false,
+      "bucket_name": "",
+      "region": "us-east-1",
+      "access_key_id": "",
+      "secret_access_key": "",
+      "encryption": "AES256"
+    },
+    "google_cloud": {
+      "enabled": false,
+      "bucket_name": "",
+      "project_id": "",
+      "credentials_file": "",
+      "location": "US"
+    },
+    "azure_blob": {
+      "enabled": false,
+      "account_name": "",
+      "account_key": "",
+      "container_name": "",
+      "connection_string": ""
+    },
+    "dropbox": {
+      "enabled": false,
+      "access_token": "",
+      "app_key": "",
+      "app_secret": ""
+    },
+    "onedrive": {
+      "enabled": false,
+      "client_id": "",
+      "client_secret": "",
+      "redirect_uri": "http://localhost:8080/auth"
+    }
+  },
+  "backup_settings": {
+    "include_accounts": true,
+    "include_settings": true,
+    "include_statistics": true,
+    "include_logs": false,
+    "include_plugins": false,
+    "backup_format": "json",
+    "compression_level": 6,
+    "retention_policy": {
+      "daily_backups": 7,
+      "weekly_backups": 4,
+      "monthly_backups": 12
+    }
+  },
+  "sync_settings": {
+    "conflict_resolution": "newer_wins",
+    "sync_frequency": "manual",
+    "auto_sync_on_startup": false,
+    "auto_sync_on_shutdown": false,
+    "sync_timeout": 30,
+    "retry_attempts": 3
+  },
+  "security": {
+    "encryption_algorithm": "AES-256-GCM",
+    "key_derivation": "PBKDF2",
+    "salt_length": 32,
+    "iterations": 100000,
+    "verify_integrity": true,
+    "secure_delete": true
+  },
+  "notifications": {
+    "backup_success": true,
+    "backup_failure": true,
+    "sync_success": false,
+    "sync_failure": true,
+    "storage_quota_warning": true,
+    "notification_methods": ["console", "log"]
+  },
+  "advanced": {
+    "parallel_uploads": 3,
+    "chunk_size_mb": 10,
+    "resume_uploads": true,
+    "verify_uploads": true,
+    "bandwidth_limit_mbps": 0,
+    "proxy_support": false
+  }
+}
