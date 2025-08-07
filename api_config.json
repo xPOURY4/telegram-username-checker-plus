@@ -1,0 +1,138 @@
+{
+  "version": "2.3.0",
+  "last_updated": "2025-08-07T00:00:00Z",
+  "api_server": {
+    "enabled": false,
+    "host": "localhost",
+    "port": 8080,
+    "debug": false,
+    "auto_start": false,
+    "ssl_enabled": false,
+    "ssl_cert_file": "",
+    "ssl_key_file": ""
+  },
+  "authentication": {
+    "enabled": true,
+    "method": "api_key",
+    "api_key": "",
+    "api_key_header": "X-API-Key",
+    "session_timeout": 3600,
+    "max_sessions": 10,
+    "rate_limiting": {
+      "enabled": true,
+      "requests_per_minute": 100,
+      "requests_per_hour": 1000,
+      "burst_limit": 20
+    }
+  },
+  "endpoints": {
+    "check_username": {
+      "enabled": true,
+      "path": "/api/v1/check",
+      "methods": ["POST"],
+      "rate_limit": 60,
+      "auth_required": true
+    },
+    "bulk_check": {
+      "enabled": true,
+      "path": "/api/v1/bulk-check",
+      "methods": ["POST"],
+      "rate_limit": 10,
+      "auth_required": true,
+      "max_usernames": 100
+    },
+    "account_status": {
+      "enabled": true,
+      "path": "/api/v1/accounts",
+      "methods": ["GET"],
+      "rate_limit": 30,
+      "auth_required": true
+    },
+    "statistics": {
+      "enabled": true,
+      "path": "/api/v1/stats",
+      "methods": ["GET"],
+      "rate_limit": 20,
+      "auth_required": true
+    },
+    "health_check": {
+      "enabled": true,
+      "path": "/api/v1/health",
+      "methods": ["GET"],
+      "rate_limit": 100,
+      "auth_required": false
+    },
+    "configuration": {
+      "enabled": false,
+      "path": "/api/v1/config",
+      "methods": ["GET", "POST"],
+      "rate_limit": 5,
+      "auth_required": true,
+      "admin_only": true
+    }
+  },
+  "response_format": {
+    "default_format": "json",
+    "supported_formats": ["json", "xml"],
+    "include_metadata": true,
+    "include_timing": true,
+    "include_version": true,
+    "pretty_print": false
+  },
+  "logging": {
+    "enabled": true,
+    "level": "INFO",
+    "log_requests": true,
+    "log_responses": false,
+    "log_errors": true,
+    "log_file": "api_server.log",
+    "max_log_size_mb": 100,
+    "backup_count": 5
+  },
+  "cors": {
+    "enabled": true,
+    "allowed_origins": ["*"],
+    "allowed_methods": ["GET", "POST", "OPTIONS"],
+    "allowed_headers": ["Content-Type", "Authorization", "X-API-Key"],
+    "max_age": 3600
+  },
+  "webhooks": {
+    "enabled": false,
+    "endpoints": [],
+    "events": {
+      "username_checked": false,
+      "flood_wait_detected": false,
+      "account_switched": false,
+      "error_occurred": true
+    },
+    "retry_attempts": 3,
+    "timeout": 10
+  },
+  "performance": {
+    "max_concurrent_requests": 50,
+    "request_timeout": 30,
+    "keep_alive_timeout": 5,
+    "max_request_size_mb": 10,
+    "compression_enabled": true,
+    "cache_enabled": false,
+    "cache_ttl": 300
+  },
+  "security": {
+    "hide_server_header": true,
+    "content_security_policy": "default-src 'self'",
+    "x_frame_options": "DENY",
+    "x_content_type_options": "nosniff",
+    "strict_transport_security": "max-age=31536000; includeSubDomains",
+    "ip_whitelist": [],
+    "ip_blacklist": [],
+    "user_agent_filtering": false
+  },
+  "monitoring": {
+    "metrics_enabled": true,
+    "metrics_endpoint": "/metrics",
+    "health_check_interval": 30,
+    "performance_tracking": true,
+    "error_tracking": true,
+    "uptime_tracking": true
+  }
+}
